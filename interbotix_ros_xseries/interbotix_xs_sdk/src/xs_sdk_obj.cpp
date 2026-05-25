@@ -164,17 +164,17 @@ void InterbotixRobotXS::robot_wait_for_joint_states()
   }
 }
 
-void InterbotixRobotXS::robot_sub_command_group(const JointGroupCommand::SharedPtr msg)
+void InterbotixRobotXS::robot_sub_command_group(JointGroupCommand::ConstSharedPtr msg)
 {
   xs_driver->write_commands(msg->name, msg->cmd);
 }
 
-void InterbotixRobotXS::robot_sub_command_single(const JointSingleCommand::SharedPtr msg)
+void InterbotixRobotXS::robot_sub_command_single(JointSingleCommand::ConstSharedPtr msg)
 {
   xs_driver->write_joint_command(msg->name, msg->cmd);
 }
 
-void InterbotixRobotXS::robot_sub_command_traj(const JointTrajectoryCommand::SharedPtr msg)
+void InterbotixRobotXS::robot_sub_command_traj(JointTrajectoryCommand::ConstSharedPtr msg)
 {
   using namespace std::chrono_literals;
   if (execute_joint_traj) {

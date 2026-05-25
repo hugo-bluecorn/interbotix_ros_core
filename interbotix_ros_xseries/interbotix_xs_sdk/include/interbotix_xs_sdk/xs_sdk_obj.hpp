@@ -190,19 +190,19 @@ private:
   /// @param msg JointGroupCommand message dictating the joint group to command along with the
   ///   actual commands
   /// @details refer to the message definition for details
-  void robot_sub_command_group(const JointGroupCommand::SharedPtr msg);
+  void robot_sub_command_group(JointGroupCommand::ConstSharedPtr msg);
 
   /// @brief ROS Subscriber callback function to command a single joint
   /// @param msg JointSingleCommand message dictating the joint to command along with the actual
   ///   command
   /// @details refer to the message definition for details
-  void robot_sub_command_single(const JointSingleCommand::SharedPtr msg);
+  void robot_sub_command_single(JointSingleCommand::ConstSharedPtr msg);
 
   /// @brief ROS Subscriber callback function to command a joint trajectory
   /// @param msg JointTrajectoryCommand message dictating the joint(s) to command along with the
   ///   desired trajectory
   /// @details refer to the message definition for details
-  void robot_sub_command_traj(const JointTrajectoryCommand::SharedPtr msg);
+  void robot_sub_command_traj(JointTrajectoryCommand::ConstSharedPtr msg);
 
   /// @brief ROS Service to torque the joints on the robot on/off
   /// @param req TorqueEnable service message request
