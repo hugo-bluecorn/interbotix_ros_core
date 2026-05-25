@@ -141,7 +141,7 @@ private:
   sensor_msgs::msg::JointState joint_states;
 
   // Holds the most recent JointTrajectoryCommand message
-  JointTrajectoryCommand::SharedPtr joint_traj_cmd;
+  JointTrajectoryCommand::ConstSharedPtr joint_traj_cmd;
 
   // Indicating the trajectory start time
   rclcpp::Time traj_start_time;
